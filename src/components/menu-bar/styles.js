@@ -35,11 +35,6 @@ export const PokeBallImg = styled.img`
     margin: auto;
     opacity: ${({ isCatching }) => isCatching ? 0.3 : 1};
     height: auto;
-    width: 3rem;
+    width: 2.5rem;
   }
-`
-export const Flex = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
