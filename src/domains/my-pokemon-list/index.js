@@ -28,6 +28,7 @@ const MyPokemonListDomain = () => {
     if(myPokeListStorage) {
       setPokemonList([...JSON.parse(myPokeListStorage)])
     }
+    else setPokemonList([])
   }
 
   const handleRemovePoke = (name) => {
@@ -36,6 +37,7 @@ const MyPokemonListDomain = () => {
       localStorage.setItem('myPokeList', JSON.stringify(updatedPoke))
     }
     else {
+      console.log('masuk else')
       localStorage.removeItem('myPokeList')
     }
     handleFetchMyPokeList()
