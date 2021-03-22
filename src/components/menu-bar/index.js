@@ -33,7 +33,7 @@ const MenuBar = ({
           </Text>
         </Link>
       </Flex>
-      <div>
+      { /* <div>
         <PokeBallImg
           isCatching={ isCatching } 
           src='/pokeball.png' 
@@ -45,7 +45,7 @@ const MenuBar = ({
         <Text textAlign='center'>
           Catch
         </Text>
-      </div>
+      </div> */ }
       <Flex>
         <Link 
           to='/pokedex'
