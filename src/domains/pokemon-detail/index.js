@@ -18,8 +18,6 @@ const PokemonDetailDomain = ({ props }) => {
   const [isError, setIsError] = useState('')
 
   useEffect(() => {
-    const bodyElt = document.querySelector('body')
-    bodyElt.style.background = 'orange'
 
     const { pokemonName } = props.match.params
 
@@ -122,10 +120,10 @@ const PokemonDetailDomain = ({ props }) => {
             handleAddToMyPokeList={ handleAddToMyPokeList }
           />
 
-          { /* <MenuBar 
+          <MenuBar 
             isCatching={ isCatching }
             handleClickPokeBall={ handleClickPokeBall }
-          /> */ }
+          />
         </>
       )
               
