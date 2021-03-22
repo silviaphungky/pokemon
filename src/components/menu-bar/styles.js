@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   padding: 0.5rem 0;
   box-shadow: 0 0 2rem 0 black;
   z-index: 10;
+  max-height: 3rem;
 `
 
 const rotation = keyframes`
