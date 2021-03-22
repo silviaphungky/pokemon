@@ -9,7 +9,9 @@ const MenuBar = ({
 }) => {
   const location = useLocation()
   return(
-    <Wrapper>
+    <Wrapper
+      isPadding={ !location.pathname.startsWith('/pokemon') }
+    >
       <Link 
         to='/'
         style={{ flex   : '1 1 auto', 

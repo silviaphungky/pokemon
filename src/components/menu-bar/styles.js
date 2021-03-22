@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   justify-content : space-between;
   box-shadow: 0 0 2rem 0 black;
   z-index: 10;
+  padding: ${({ isPadding }) => isPadding ? '0.25rem 0' : '0'};
 `
 
 const rotation = keyframes`
