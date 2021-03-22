@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   background: orange;
   width: 100vw;
   display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   justify-content : center;
   padding: 0.5rem 0;
   box-shadow: 0 0 2rem 0 black;
