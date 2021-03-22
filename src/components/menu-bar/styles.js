@@ -8,11 +8,7 @@ export const Wrapper = styled.div`
   background: orange;
   width: 100vw;
   display: flex;
-  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-  display: -ms-flexbox;  /* TWEENER - IE 10 */
-  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
   justify-content : space-between;
-  padding: 0.5rem 0;
   box-shadow: 0 0 2rem 0 black;
   z-index: 10;
 `
@@ -31,10 +27,10 @@ export const PokeBallImg = styled.img`
 
   ${IS_MOBILE_SCREEN}{
     ${({ isCatching }) => isCatching ? { animation: `${rotation} 2s infinite linear` } : { animation: 'none' }};
-    display: ${({ isHide }) => isHide ? 'none' : 'block'};
     margin: auto;
     opacity: ${({ isCatching }) => isCatching ? 0.3 : 1};
     height: auto;
     width: 2.5rem;
+    display: block;
   }
 `

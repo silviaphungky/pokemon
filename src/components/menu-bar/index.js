@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Text } from '..'
+import { Button, Text } from '..'
 import { PokeBallImg, Wrapper } from './styles'
 
 const MenuBar = ({
@@ -33,15 +33,23 @@ const MenuBar = ({
           Pokemon List
         </Text>
       </Link>
-      <div>
-        <PokeBallImg
-          isCatching={ isCatching } 
-          src='/pokeball.png' 
-          alt='catch'
-          width='15%'
-          onClick={ handleClickPokeBall }
-          isHide={ !location.pathname.startsWith('/pokemon') }
-        />
+      <div style={{
+        display   : location.pathname.startsWith('/pokemon') ? 'block' : 'none',
+        textAlign : 'center' 
+      }}
+      >
+        <Button
+          color='transparent'
+          disabled={ isCatching }
+        >
+          <PokeBallImg
+            isCatching={ isCatching } 
+            src='/pokeball.png' 
+            alt='catch'
+            width='15%'
+            onClick={ handleClickPokeBall }
+          />
+        </Button>
         <Text 
           marginMobile='0.5rem 0'
           bold
