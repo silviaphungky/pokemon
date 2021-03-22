@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": "src",
+    "paths": {
+      "components/*": ["components/*"],
+      "styles/*": ["styles/*"],
+      "services/*": ["services/*"],
+      "graphql/*": ["graphql/*"],
+      "domains/*": ["domains/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", ".vscode"]
+}
