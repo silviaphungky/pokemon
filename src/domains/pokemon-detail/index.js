@@ -21,6 +21,9 @@ const PokemonDetailDomain = ({ props }) => {
 
     const { pokemonName } = props.match.params
 
+    const bodyElt = document.querySelector('body')
+    bodyElt.style.background = 'orange'
+
     PokemonApi.getPokemonDetail(pokemonName)
       .then((response) => {
         const data = response.data
