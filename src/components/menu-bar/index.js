@@ -7,9 +7,7 @@ const MenuBar = ({
   isCatching,
   handleClickPokeBall
 }) => {
-
   const location = useLocation()
-  console.log(location.pathname)
   return(
     <Wrapper>
       <Link 
