@@ -122,10 +122,10 @@ const PokemonDetailDomain = ({ props }) => {
             handleAddToMyPokeList={ handleAddToMyPokeList }
           />
 
-          <MenuBar 
+          { /* <MenuBar 
             isCatching={ isCatching }
             handleClickPokeBall={ handleClickPokeBall }
-          />
+          /> */ }
         </>
       )
               
