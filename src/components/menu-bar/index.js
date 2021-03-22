@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Button, Text } from '..'
-import { PokeBallImg, Wrapper } from './styles'
+import { Button, Text } from 'components'
+import { 
+  PokeBallImg, 
+  Wrapper,
+  PokeballWrapper, 
+  CatchMeText
+} from './styles'
 
 const MenuBar = ({
   isCatching,
@@ -35,11 +40,8 @@ const MenuBar = ({
           Pokemon List
         </Text>
       </Link>
-      <div style={{
-        display   : location.pathname.startsWith('/pokemon') ? 'block' : 'none',
-        textAlign : 'center' 
-      }}
-      >
+
+      <PokeballWrapper isHide={ !location.pathname.startsWith('/pokemon') } >
         <Button
           color='transparent'
           disabled={ isCatching }
@@ -52,14 +54,15 @@ const MenuBar = ({
             onClick={ handleClickPokeBall }
           />
         </Button>
-        <Text 
+        <CatchMeText 
           marginMobile='0.5rem 0'
           bold
           textAlign='center'
         >
           CATCH ME
-        </Text>
-      </div>
+        </CatchMeText>
+      </PokeballWrapper>
+
       <Link 
         to='/pokedex'
         style={{ flex   : '1 1 auto', 
