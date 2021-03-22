@@ -11,11 +11,10 @@ export const Wrapper = styled.div`
   display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
   display: -ms-flexbox;  /* TWEENER - IE 10 */
   display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-  justify-content : center;
+  justify-content : space-between;
   padding: 0.5rem 0;
   box-shadow: 0 0 2rem 0 black;
   z-index: 10;
-  max-height: 3rem;
 `
 
 const rotation = keyframes`
@@ -36,5 +35,11 @@ export const PokeBallImg = styled.img`
     margin: auto;
     opacity: ${({ isCatching }) => isCatching ? 0.3 : 1};
     height: auto;
+    width: 3rem;
   }
+`
+export const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
