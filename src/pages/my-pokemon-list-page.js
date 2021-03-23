@@ -1,12 +1,22 @@
+import { useNetwork } from 'context/network-provider'
 import React from 'react'
-import { MenuBar } from '../components'
-import { MyPokemonListDomain } from '../domains'
+import { MenuBar, NoNetwork } from 'components'
+import { MyPokemonListDomain } from 'domains'
 
-const MyPokemonListPage = () => (
-  <>
-    <MyPokemonListDomain />
-    <MenuBar />
-  </>
-)
+const MyPokemonListPage = () => {
+
+  const { isOnline } = useNetwork()
+
+  return(
+    isOnline
+      ? (
+        <>
+          <MyPokemonListDomain />
+          <MenuBar />
+        </>
+      )
+      : <NoNetwork />
+  )
+}
 
 export default MyPokemonListPage
