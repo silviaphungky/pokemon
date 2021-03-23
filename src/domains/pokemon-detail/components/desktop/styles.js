@@ -20,7 +20,7 @@ export const MobileWrapper = styled.div`
 `
 
 export const PokemonDetailCard = styled(Card)`
-  background: #ffffff; 
+  background: #fbfbf9; 
   border: none;
   border-radius: 2rem 2rem 0 0;
   padding-bottom: 5rem;
