@@ -25,7 +25,7 @@ export const RotationCircle = styled.div `
   ${IS_MOBILE_SCREEN}{
     width: 50vw;
     height: 50vw;
-    top: 7rem;
+    top: 7.5rem;
   }
 `
 
@@ -38,7 +38,7 @@ export const Img = styled.img`
   cursor: pointer;
 
   ${IS_MOBILE_SCREEN}{
-    flex: 0 0 15%;
-    width: 15%;
+    flex: 0 0 20%;
+    width: 20%;
   }
 `
