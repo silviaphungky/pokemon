@@ -8,7 +8,7 @@ import PropTypes from 'proptypes'
 
 const propTypes = {
   loading   : PropTypes.bool,
-  pokemons  : PropTypes.array,
+  pokemons  : PropTypes.object,
   offset    : PropTypes.number,
   limit     : PropTypes.number,
   setOffset : PropTypes.func
@@ -16,7 +16,7 @@ const propTypes = {
 
 const defaultProps = {
   loading   : true,
-  pokemons  : [],
+  pokemons  : {},
   offset    : 1,
   limit     : 10,
   setOffset : () => {}
