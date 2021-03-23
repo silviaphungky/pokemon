@@ -13,11 +13,12 @@ import {
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { PokemonName } from 'domains/pokemon-detail/styles'
-import { MyPokemonCard, MyPokemonListEmpty } from './components'
+import { MyPokemonListCard, MyPokemonListEmpty, MyPokemonListReleaseConfirmation } from './components'
 
 const MyPokemonListDomain = () => {
 
   const [pokemonList, setPokemonList] = useState([])
+  const [isOpenConfirmation, setIsOpenConfirmation] = useState(false)
 
   useEffect(() => {
     handleFetchMyPokeList()
@@ -37,11 +38,11 @@ const MyPokemonListDomain = () => {
       localStorage.setItem('myPokeList', JSON.stringify(updatedPoke))
     }
     else {
-      console.log('masuk else')
       localStorage.removeItem('myPokeList')
     }
     handleFetchMyPokeList()
     toast(`${name} was relaesed`)
+    setIsOpenConfirmation(false)
   }
 
   return(
@@ -63,16 +64,20 @@ const MyPokemonListDomain = () => {
                 <Grid>
                   {
                     pokemonList.map((poke) => (
-                      <MyPokemonCard 
-                        key={ poke.name }
-                        poke={ poke }
-                        handleRemovePoke={ handleRemovePoke }
-                      />
+                      <>
+                        <MyPokemonListCard 
+                          key={ poke.name }
+                          poke={ poke }
+                          isOpenConfirmation={ isOpenConfirmation }
+                          setIsOpenConfirmation={ setIsOpenConfirmation }
+                          handleRemovePoke={ handleRemovePoke }
+                        />
+                      </>
                     ))
                   }
                 </Grid>
                 <ToastContainer 
-                  position="bottom-right"
+                  position="top-right"
                   autoClose={ 3000 }
                   hideProgressBar={ true }
                   newestOnTop={ false }

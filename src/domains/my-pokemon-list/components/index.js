@@ -1,7 +1,9 @@
 import MyPokemonListEmpty from './empty'
-import MyPokemonCard from './card'
+import MyPokemonListCard from './card'
+import MyPokemonListReleaseConfirmation from './release-confirmtion'
 
 export {
   MyPokemonListEmpty,
-  MyPokemonCard
+  MyPokemonListCard,
+  MyPokemonListReleaseConfirmation
 }
