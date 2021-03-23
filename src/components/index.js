@@ -7,6 +7,7 @@ import MenuBar from './menu-bar'
 import Layout from './layout'
 import Loading from './loading'
 import Input from './input'
+import NoNetwork from './no-network'
 
 export {
   Text,
@@ -17,5 +18,6 @@ export {
   MenuBar,
   Layout,
   Loading,
-  Input
+  Input,
+  NoNetwork
 }
