@@ -14,10 +14,11 @@ import {
 
 const NotFoundDomain = () => (
   <>
-    <HeaderImgWrapper 
-      style={{ background: secondary }}
-    >
-      <HeaderImg src='header.png'/>
+    <HeaderImgWrapper style={{ background: secondary }} >
+      <HeaderImg 
+        src='header.png'
+        alt='pokemon'
+      />
     </HeaderImgWrapper>
     <NotFoundCard>
       <Img 
