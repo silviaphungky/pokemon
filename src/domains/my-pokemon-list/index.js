@@ -2,18 +2,21 @@ import React, {
   useEffect, 
   useState 
 } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { 
   Layout, 
   Text
 } from 'components'
 import { 
+  MyPokemonListCard, 
+  MyPokemonListEmpty 
+} from './components'
+import { 
   Grid, 
   PokedexCard
 } from './styles'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { PokemonName } from 'domains/pokemon-detail/styles'
-import { MyPokemonListCard, MyPokemonListEmpty, MyPokemonListReleaseConfirmation } from './components'
 
 const MyPokemonListDomain = () => {
 
