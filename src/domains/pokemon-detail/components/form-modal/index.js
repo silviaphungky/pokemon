@@ -39,16 +39,17 @@ const PokemonDetailFormModal = ({
         alt={caughtPoke.name}
       />
     </div>
-<div>
-<Input 
-      value={ caughtPoke.name }
-      placeholder='enter nickname'
-      onChange={ (e) =>{
-        caughtPoke.name = e.target.value
-        setCaughtPoke({ ...caughtPoke })
-      } }
-    />
-</div>
+    <div>
+      <Input 
+        value={ caughtPoke.name }
+        type='text'
+        placeholder='enter nickname'
+        onChange={ (e) =>{
+          caughtPoke.name = e.target.value
+          setCaughtPoke({ ...caughtPoke })
+        } }
+      />
+    </div>
     <ErrorMessage 
       isError={isError}
       marginMobile='0.5rem 0 0'
@@ -65,7 +66,7 @@ const PokemonDetailFormModal = ({
         color='#ffffff'
         bold
       >
-        add to my pokelist
+        add to pokedex
       </Text>
     </Button>
   </Modal>
