@@ -53,13 +53,13 @@ const MenuBar = ({
             width='15%'
             onClick={ handleClickPokeBall }
           />
+          <CatchMeText 
+            bold
+            textAlign='center'
+          >
+            CATCH ME
+          </CatchMeText>
         </Button>
-        <CatchMeText 
-          bold
-          textAlign='center'
-        >
-          CATCH ME
-        </CatchMeText>
       </PokeballWrapper>
 
       <Link 
