@@ -4,6 +4,23 @@ import {
   Text
 } from 'components'
 import { Flex } from './styles'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  loading   : PropTypes.bool,
+  pokemons  : PropTypes.array,
+  offset    : PropTypes.number,
+  limit     : PropTypes.number,
+  setOffset : PropTypes.func
+}
+
+const defaultProps = {
+  loading   : true,
+  pokemons  : [],
+  offset    : 1,
+  limit     : 10,
+  setOffset : () => {}
+}
 
 const PokemonListPagination = ({
   loading,
@@ -48,5 +65,8 @@ const PokemonListPagination = ({
     </Text>
   </>
 )
+
+PokemonListPagination.propTypes = propTypes
+PokemonListPagination.defaultProps = defaultProps
 
 export default PokemonListPagination

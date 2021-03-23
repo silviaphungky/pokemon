@@ -10,19 +10,41 @@ import {
   Layout 
 } from 'components'
 import { 
+  PokemonDetailCard
+} from './styles'
+import { 
   Flex, 
   MobileWrapper 
 } from '../../styles'
-import { 
-  PokemonDetailCard
-} from './styles'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  detail: PropTypes.shape({
+    weight : PropTypes.number,
+    height : PropTypes.number,
+    types  : PropTypes.array
+  }),
+  isCatching    : PropTypes.bool,
+  previewImg    : PropTypes.string,
+  setPreviewImg : PropTypes.func
+}
+
+const defaultProps = {
+  detail: {
+    weight : 0,
+    height : 0,
+    types  : []
+  },
+  isCatching    : false,
+  previewImg    : '',
+  setPreviewImg : () => {}
+}
 
 const PokemonDetailMobile = ({
   detail,
   isCatching,
   previewImg,
-  setPreviewImg,
-  handleClickPokeBall
+  setPreviewImg
 }) => (
   <MobileWrapper>
     <PokemonDetailCard>
@@ -65,5 +87,8 @@ const PokemonDetailMobile = ({
     </PokemonDetailCard>
   </MobileWrapper>
 )
+
+PokemonDetailMobile.propTypes = propTypes
+PokemonDetailMobile.defaultProps = defaultProps
 
 export default PokemonDetailMobile

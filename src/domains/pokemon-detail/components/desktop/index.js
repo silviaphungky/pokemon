@@ -1,5 +1,10 @@
 import React from 'react'
-import { DesktopWrapper, ImageWrapper, InformationWrapper, PokemonDetailCard } from './styles'
+import { 
+  DesktopWrapper, 
+  ImageWrapper, 
+  InformationWrapper, 
+  PokemonDetailCard 
+} from './styles'
 import { 
   Badge, 
   Button, 
@@ -9,10 +14,37 @@ import {
 import { 
   PokemonDetailMoves, 
   PokemonDetailStats, 
-  PokemonDetailTypeBadge 
+  PokemonDetailTypeBadge,
+  PokemonDetailPreviewImage  
 } from 'domains/pokemon-detail/components'
 import { Flex } from '../../styles'
-import PokemonDetailPreviewImage from '../preview-image'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  detail: PropTypes.shape({
+    weight          : PropTypes.number,
+    height          : PropTypes.number,
+    types           : PropTypes.array,
+    base_experience : PropTypes.number
+  }),
+  isCatching          : PropTypes.bool,
+  previewImg          : PropTypes.string,
+  setPreviewImg       : PropTypes.func,
+  handleClickPokeBall : PropTypes.func
+}
+
+const defaultProps = {
+  detail: {
+    weight          : 0,
+    height          : 0,
+    types           : [],
+    base_experience : 0
+  },
+  isCatching          : false,
+  previewImg          : '',
+  setPreviewImg       : () => {},
+  handleClickPokeBall : () => {}
+}
 
 const PokemonDetailDesktop = ({
   detail,
@@ -124,5 +156,8 @@ const PokemonDetailDesktop = ({
     </DesktopWrapper>
   )
 }
+
+PokemonDetailDesktop.propTypes = propTypes
+PokemonDetailDesktop.defaultProps = defaultProps
 
 export default PokemonDetailDesktop

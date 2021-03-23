@@ -6,6 +6,23 @@ import { PokemonName } from './styles'
 import { useHistory } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import { secondary } from 'components/color-mapping'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  props: PropTypes.shape({
+    match: PropTypes.shape({
+      params: PropTypes.object
+    })
+  })
+}
+
+const defaultProps = {
+  props: {
+    match: {
+      params: {}
+    }
+  }
+}
 
 const PokemonDetailDomain = ({ props }) => {
 
@@ -130,6 +147,7 @@ const PokemonDetailDomain = ({ props }) => {
             setCaughtPoke={ setCaughtPoke }
             handleAddToMyPokeList={ handleAddToMyPokeList }
           />
+
           <ToastContainer 
             position="top-right"
             autoClose={ 3000 }
@@ -151,5 +169,8 @@ const PokemonDetailDomain = ({ props }) => {
               
   )
 }
+
+PokemonDetailDomain.propTypes = propTypes
+PokemonDetailDomain.defaultProps = defaultProps
 
 export default PokemonDetailDomain

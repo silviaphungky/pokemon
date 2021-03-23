@@ -17,7 +17,10 @@ import {
   PokemonListCard
 } from './styles'
 import PokeonGraphql from 'graphql/pokemon-graphql'
-import { secondary } from 'components/color-mapping'
+import { 
+  primary, 
+  secondary 
+} from 'components/color-mapping'
 
 const PokemonListDomain = () => {
 
@@ -80,7 +83,10 @@ const PokemonListDomain = () => {
                             width='100%'
                             margin='1rem 0 0'
                           >
-                            <Text color='#000000' bold>
+                            <Text 
+                              color={ primary }
+                              bold
+                            >
                               detail
                             </Text>
                           </Button>
