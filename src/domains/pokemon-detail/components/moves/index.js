@@ -1,7 +1,11 @@
 import React from 'react'
-import { Badge, Text } from '../../../../components'
-import { DesktopWrapper, MobileWrapper } from '../../styles'
+import { Badge, Text } from 'components'
 import { Grid } from './styles'
+import { 
+  DesktopWrapper, 
+  MobileWrapper 
+} from '../../styles'
+import { blue } from 'components/color-mapping'
 
 const PokemonDetailMoves = ({ detail }) => (
   <div style={{ marginBottom: '0rem' }}>
@@ -11,7 +15,7 @@ const PokemonDetailMoves = ({ detail }) => (
       marginMobile='1rem 0 0'
     >
       <MobileWrapper>
-        <Badge color='cadetblue'>
+        <Badge color={ blue }>
           MOVES
         </Badge>
       </MobileWrapper>
@@ -29,7 +33,7 @@ const PokemonDetailMoves = ({ detail }) => (
       {
         detail.moves.map((move) => (
           <Text key={ `move-${move.move.name}` } bold>
-            <Badge color='cadetblue'>
+            <Badge color={ blue }>
               { move.move.name }
             </Badge>
           </Text>

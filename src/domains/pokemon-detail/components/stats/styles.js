@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
-import { grey } from 'components/color-mapping'
+import { 
+  blue, 
+  grey 
+} from 'components/color-mapping'
 import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 
 export const StatsWrapper = styled.div`
@@ -21,7 +24,7 @@ export const Flex = styled.div`
 
 export const AchieveBar = styled.div`
   height: 0.5rem;
-  background: orange;
+  background: ${blue};
   flex: 0 0 ${({ percentage }) => percentage}%;
 
   ${IS_MOBILE_SCREEN}{
