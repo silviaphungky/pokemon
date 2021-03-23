@@ -8,13 +8,12 @@ import { Img } from './styles'
 import dayjs from 'dayjs'
 import { PokemonDetailStats } from 'domains/pokemon-detail/components'
 import POKEMON_TYPE_BADGE_COLOR_MAPPING from 'domains/pokemon-detail/components/type-badge/constant'
-import { MyPokemonListReleaseConfirmation } from 'domains/my-pokemon-list/components'
+import { secondary } from 'components/color-mapping'
 
 const MyPokemonListCard = ({ 
   poke,
-  isOpenConfirmation,
-  setIsOpenConfirmation,
-  handleRemovePoke
+  setSelectedPoke,
+  setIsOpenConfirmation
 }) => {
 
   const abbreviations = (name) => {
@@ -30,12 +29,14 @@ const MyPokemonListCard = ({
       <Card
         key={ poke.name } 
         background={ POKEMON_TYPE_BADGE_COLOR_MAPPING[poke.mainTypes] }
-        style={{ marginTop: '3rem' }}
+        style={{ 
+          marginTop : '3rem', 
+          padding   : '1rem 0.5rem' 
+        }}
       >
         <Img 
           src={ poke.image } 
           alt={ poke.name }
-          width='100%'
         />
         <Text 
           bold
@@ -52,7 +53,7 @@ const MyPokemonListCard = ({
           margin='0.75rem 0 0'
           marginMobile='0.75rem 0 0'
         >
-        Nickname:
+          Nickname:
         </Text>
         <Text 
           margin='0.5rem 0 0'
@@ -92,8 +93,11 @@ const MyPokemonListCard = ({
           ))
         }
         <Button 
-          onClick={ () => setIsOpenConfirmation(true) }
-          color='orange'
+          onClick={ () => {
+            setIsOpenConfirmation(true)
+            setSelectedPoke(poke)
+          } }
+          color={ secondary }
           width='100%'
           margin='1rem 0 0 0'
         >
@@ -102,12 +106,6 @@ const MyPokemonListCard = ({
           </Text>
         </Button>
       </Card>
-      <MyPokemonListReleaseConfirmation 
-        poke={ poke }
-        isOpenConfirmationModal={ isOpenConfirmation } 
-        setIsOpenConfirmationModal={ setIsOpenConfirmation } 
-        handleRemovePoke={ handleRemovePoke }
-      />
     </>
   )
 }

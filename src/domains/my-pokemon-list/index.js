@@ -10,7 +10,8 @@ import {
 } from 'components'
 import { 
   MyPokemonListCard, 
-  MyPokemonListEmpty 
+  MyPokemonListEmpty, 
+  MyPokemonListReleaseConfirmation
 } from './components'
 import { 
   Grid, 
@@ -21,6 +22,7 @@ import { PokemonName } from 'domains/pokemon-detail/styles'
 const MyPokemonListDomain = () => {
 
   const [pokemonList, setPokemonList] = useState([])
+  const [selectedPoke, setSelectedPoke] = useState({})
   const [isOpenConfirmation, setIsOpenConfirmation] = useState(false)
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const MyPokemonListDomain = () => {
         {
           pokemonList.length > 0
             ? (
-              <Layout>
+              <>
                 <Grid>
                   {
                     pokemonList.map((poke) => (
@@ -71,9 +73,8 @@ const MyPokemonListDomain = () => {
                         <MyPokemonListCard 
                           key={ poke.name }
                           poke={ poke }
-                          isOpenConfirmation={ isOpenConfirmation }
+                          setSelectedPoke={ setSelectedPoke }
                           setIsOpenConfirmation={ setIsOpenConfirmation }
-                          handleRemovePoke={ handleRemovePoke }
                         />
                       </>
                     ))
@@ -90,11 +91,17 @@ const MyPokemonListDomain = () => {
                   draggable
                   pauseOnHover
                 />
-              </Layout>
+              </>
             )
             : <MyPokemonListEmpty />
         }_
       </PokedexCard>
+      <MyPokemonListReleaseConfirmation 
+        selectedPoke={ selectedPoke }
+        isOpenConfirmationModal={ isOpenConfirmation } 
+        setIsOpenConfirmationModal={ setIsOpenConfirmation } 
+        handleRemovePoke={ handleRemovePoke }
+      />
     </>
   )
 }

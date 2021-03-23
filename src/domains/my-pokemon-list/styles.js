@@ -8,7 +8,7 @@ export const PokedexCard = styled(Card)`
   border : none;
   border-radius: 2rem 2rem 0 0;
   min-height : 100vh;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
   margin-top : -2rem;
 
   ${IS_MOBILE_SCREEN}{
@@ -23,14 +23,6 @@ export const Grid = styled.div`
 
   ${IS_MOBILE_SCREEN} {
     grid-template-columns : repeat(2, 1fr);
-    grid-gap : 1rem; 
+    grid-gap : 0.5rem; 
   }
 `
-
-export const Img = styled.img`
-  margin-top: -6rem;
-
-  ${IS_MOBILE_SCREEN}{
-    margin-top: -4.5rem;
-  }
-` 

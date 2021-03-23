@@ -8,7 +8,7 @@ import { Flex } from './styles'
 import { secondary } from 'components/color-mapping'
 
 const MyPokemonListReleaseConfirmation = ({
-  poke,
+  selectedPoke,
   isOpenConfirmationModal,
   setIsOpenConfirmationModal,
   handleRemovePoke
@@ -18,12 +18,12 @@ const MyPokemonListReleaseConfirmation = ({
     setIsOpen={ setIsOpenConfirmationModal }
   >
     <Text>
-      Are you sure want to relase <strong>{ poke.name }</strong> ?
+      Are you sure want to relase <strong>{ selectedPoke.name }</strong> ?
     </Text>
 
     <img 
-      src={ poke.image } 
-      alt={ poke.name }
+      src={ selectedPoke.image } 
+      alt={ selectedPoke.name }
     />
 
     <Flex>
@@ -31,7 +31,7 @@ const MyPokemonListReleaseConfirmation = ({
         margin='0 1rem 0 0'
         larger
         color={ secondary }
-        onClick={ () => handleRemovePoke(poke.name) }
+        onClick={ () => handleRemovePoke(selectedPoke.name) }
       >
         <Text> 
           Yes
