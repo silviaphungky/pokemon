@@ -55,7 +55,6 @@ const MenuBar = ({
           />
         </Button>
         <CatchMeText 
-          marginMobile='0.5rem 0'
           bold
           textAlign='center'
         >
