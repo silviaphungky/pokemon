@@ -1,12 +1,13 @@
 import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
+import { secondary } from 'components/color-mapping'
 import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 import { Text } from '..'
 
 export const Wrapper = styled.div`
   position: fixed;
   bottom: 0;
-  background: orange;
+  background: ${secondary};
   width: 100vw;
   display: flex;
   justify-content : space-between;

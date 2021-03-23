@@ -17,6 +17,7 @@ import {
   PokemonListCard
 } from './styles'
 import PokeonGraphql from 'graphql/pokemon-graphql'
+import { secondary } from 'components/color-mapping'
 
 const PokemonListDomain = () => {
 
@@ -75,7 +76,7 @@ const PokemonListDomain = () => {
                             { pokemon.name }
                           </Text>
                           <Button
-                            color='orange'
+                            color={ secondary }
                             width='100%'
                             margin='1rem 0 0'
                           >
