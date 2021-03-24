@@ -79,6 +79,7 @@ const PokemonListDomain = () => {
                             { pokemon.name }
                           </Text>
                           <Button
+                            arial-label='detail'
                             color={ secondary }
                             width='100%'
                             margin='1rem 0 0'
