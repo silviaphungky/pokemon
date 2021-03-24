@@ -63,29 +63,25 @@ const PokemonDetailPreviewImage = ({
       <Img
         src={ detail.sprites.front_default } 
         alt='front default' 
-        opacity={ previewImg === detail.sprites.front_default }
-        border={ previewImg === detail.sprites.front_default }
+        previewImg={ previewImg === detail.sprites.front_default }
         onClick={ () => setPreviewImg(detail.sprites.front_default) }
       />
       <Img
         src={ detail.sprites.back_default } 
         alt='back default' 
-        opacity={ previewImg === detail.sprites.back_default }
-        border={ previewImg === detail.sprites.back_default }
+        previewImg={ previewImg === detail.sprites.back_default }
         onClick={ () => setPreviewImg(detail.sprites.back_default) }
       />
       <Img
         src={ detail.sprites.front_shiny } 
         alt='front shiny' 
-        opacity={ previewImg === detail.sprites.front_shiny }
-        border={ previewImg === detail.sprites.front_shiny }
+        previewImg={ previewImg === detail.sprites.front_shiny }
         onClick={ () => setPreviewImg(detail.sprites.front_shiny) }
       />
       <Img
         src={ detail.sprites.back_shiny } 
         alt='back shiny' 
-        opacity={ previewImg === detail.sprites.back_shiny }
-        border={ previewImg === detail.sprites.back_shiny }
+        previewImg={ previewImg === detail.sprites.back_shiny }
         onClick={ () => setPreviewImg(detail.sprites.back_shiny) }
       />
     </Flex>
