@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { primary } from 'components/color-mapping'
-import { Card } from '../../components'
-import { IS_MOBILE_SCREEN } from '../../utils/media-queries'
+import { Card } from 'components'
+import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 
 export const HeaderImgWrapper = styled.div`
   background: rgba(149, 2, 23, 0.8);

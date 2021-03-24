@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Card } from 'components'
 import { primary } from 'components/color-mapping'
-import { IS_MOBILE_SCREEN } from '../../utils/media-queries'
+import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 
 export const PokedexCard = styled(Card)`
   background : #ffffff;

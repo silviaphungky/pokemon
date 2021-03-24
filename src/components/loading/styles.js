@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { keyframes } from '@emotion/react'
-import { IS_MOBILE_SCREEN } from '../../utils/media-queries'
+import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 
 const rotation = keyframes`
   from {

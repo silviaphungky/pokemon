@@ -1,5 +1,21 @@
 import styled from '@emotion/styled'
-import { IS_MOBILE_SCREEN } from '../../../../utils/media-queries'
+import { IS_MOBILE_SCREEN } from 'utils/media-queries'
+
+export const DesktopWrapper = styled.div`
+  display: block;
+
+  ${IS_MOBILE_SCREEN} {
+    display: none;
+  }
+`
+
+export const MobileWrapper = styled.div`
+  display: none;
+
+  ${IS_MOBILE_SCREEN} {
+    display: block;
+  }
+`
 
 export const Grid = styled.div`
   display : grid;   

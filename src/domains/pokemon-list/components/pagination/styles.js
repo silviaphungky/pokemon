@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { IS_MOBILE_SCREEN } from '../../../../utils/media-queries'
+import { IS_MOBILE_SCREEN } from 'utils/media-queries'
 
 export const Flex = styled.div`
   display: flex;

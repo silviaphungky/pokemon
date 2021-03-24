@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Button } from '..'
-import { IS_MOBILE_SCREEN } from '../../utils/media-queries'
+import { IS_MOBILE_SCREEN, IS_TAB_SCREEN } from 'utils/media-queries'
 
 
 export const Modale = styled.div`
@@ -65,6 +65,11 @@ export const ModalDialog = styled.div`
     : ''
 }
 
+
+  ${IS_TAB_SCREEN} {
+    margin: 0.5rem 1rem;
+    padding: 0.75rem;
+  }
   ${IS_MOBILE_SCREEN} {
     margin: 0.5rem;
     padding: 0.75rem;
