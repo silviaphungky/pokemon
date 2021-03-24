@@ -57,6 +57,7 @@ const PokemonDetailDomain = ({ props }) => {
         if(error.response.status === 404) {
           history.push('/404')
         }
+        else alert(error.response.message)
       })
 
     const myPokeStorage = localStorage.getItem('myPokeList')
