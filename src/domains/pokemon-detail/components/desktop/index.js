@@ -26,7 +26,8 @@ const propTypes = {
     weight          : PropTypes.number,
     height          : PropTypes.number,
     types           : PropTypes.array,
-    base_experience : PropTypes.number
+    base_experience : PropTypes.number,
+    stats           : PropTypes.array
   }),
   isCatching          : PropTypes.bool,
   previewImg          : PropTypes.string,
@@ -39,7 +40,8 @@ const defaultProps = {
     weight          : 0,
     height          : 0,
     types           : [],
-    base_experience : 0
+    base_experience : 0,
+    stats           : []
   },
   isCatching          : false,
   previewImg          : '',
