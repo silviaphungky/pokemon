@@ -102,20 +102,20 @@ const PokemonDetailDomain = ({ props }) => {
         setIsError('Nickname already exists')
       }
       else {
-        getStorage()
         const updatedMyPokeList = [...myPokeList, caughtPoke]
         localStorage.setItem('myPokeList', JSON.stringify(updatedMyPokeList))
         setIsOpenModal(false)
         toast(`${caughtPoke.name} has been added to Pokedex`)
+        getStorage()
         setCaughtPoke({})
       }
     }
     else if(myPokeList.length === 0 && caughtPoke.name){
-      getStorage()
       const updatedMyPokeList = [...myPokeList, caughtPoke]
       localStorage.setItem('myPokeList', JSON.stringify(updatedMyPokeList))
       setIsOpenModal(false)
       setCaughtPoke({})
+      getStorage()
       toast(`${caughtPoke.name} has been added to Pokedex`)
     }
     else setIsError('Please enter a nickname')
