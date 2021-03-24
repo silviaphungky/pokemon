@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Loading, MenuBar, Text } from 'components'
 import PokemonApi from 'services/pokemon-api'
 import { PokemonDetailDesktop, PokemonDetailFormModal, PokemonDetailMobile } from './components'
@@ -39,12 +39,9 @@ const PokemonDetailDomain = ({ props }) => {
 
   const history = useHistory()
 
-  useEffect(() => {
+  const { pokemonName } = props.match.params
 
-    const { pokemonName } = props.match.params
-
-    const bodyElt = document.querySelector('body')
-    bodyElt.style.background = secondary
+  const fetchPokemonDetail = useCallback(() => {
 
     PokemonApi.getPokemonDetail(pokemonName)
       .then((response) => {
@@ -59,12 +56,24 @@ const PokemonDetailDomain = ({ props }) => {
         }
         else alert(error.response.message)
       })
+  }, [history, pokemonName])
 
+
+  const getStorage = () => {
     const myPokeStorage = localStorage.getItem('myPokeList')
     const initialmyPokeList = myPokeStorage? JSON.parse(myPokeStorage) : []
     setMyPokeList([...initialmyPokeList])
+  } 
 
-  }, [history, props.match.params])
+  useEffect(() => {
+
+    const bodyElt = document.querySelector('body')
+    bodyElt.style.background = secondary
+
+    fetchPokemonDetail()
+    getStorage()
+
+  }, [fetchPokemonDetail, history, pokemonName])
 
   const handleClickPokeBall = () => {
     if(!isCatching) {
@@ -93,16 +102,20 @@ const PokemonDetailDomain = ({ props }) => {
         setIsError('Nickname already exists')
       }
       else {
+        getStorage()
         const updatedMyPokeList = [...myPokeList, caughtPoke]
         localStorage.setItem('myPokeList', JSON.stringify(updatedMyPokeList))
         setIsOpenModal(false)
         toast(`${caughtPoke.name} has been added to Pokedex`)
+        setCaughtPoke({})
       }
     }
     else if(myPokeList.length === 0 && caughtPoke.name){
+      getStorage()
       const updatedMyPokeList = [...myPokeList, caughtPoke]
       localStorage.setItem('myPokeList', JSON.stringify(updatedMyPokeList))
       setIsOpenModal(false)
+      setCaughtPoke({})
       toast(`${caughtPoke.name} has been added to Pokedex`)
     }
     else setIsError('Please enter a nickname')
@@ -113,6 +126,7 @@ const PokemonDetailDomain = ({ props }) => {
       ? <Loading />
       : (
         <>
+          { console.log('caugh', caughtPoke) }
           <PokemonName>
             <Text
               bold
