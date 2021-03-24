@@ -48,14 +48,14 @@ export const RotationCircle = styled.div `
   border-radius: 50%;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   left: 0;
   right: 0;
   position: absolute;
   animation: ${spinoffPulse} 1s infinite linear;
-  display: ${({ isCatching }) => isCatching ? 'block' : 'none'}
+  display: ${({ isCatching }) => isCatching ? 'block' : 'none'};
 
   ${IS_TAB_SCREEN}{
     width: 100%;
