@@ -48,7 +48,7 @@ export const RotationCircle = styled.div `
   border-radius: 50%;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 50%;
   height: 100%;
   margin: 0 auto;
   left: 0;
