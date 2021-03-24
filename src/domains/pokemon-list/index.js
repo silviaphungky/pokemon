@@ -28,7 +28,7 @@ const PokemonListDomain = () => {
   const limit = 20
 
   const { 
-    data: { pokemons = [] } = {},
+    data: { pokemons = {} } = {},
     loading
   } = useQuery(PokeonGraphql.getPokemonList, {
     variables: {
