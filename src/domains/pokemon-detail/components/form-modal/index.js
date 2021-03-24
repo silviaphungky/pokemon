@@ -78,9 +78,10 @@ const PokemonDetailFormModal = ({
         alt='caught pokemon'
       />
     </div>
+
     <div>
       <Input 
-        value={ caughtPoke.name }
+        value={ caughtPoke.name ? caughtPoke.name : ''}
         type='text'
         placeholder='enter nickname'
         onChange={ (e) =>{
