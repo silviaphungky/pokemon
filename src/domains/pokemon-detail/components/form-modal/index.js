@@ -5,7 +5,46 @@ import {
   Text,
   Input 
 } from 'components'
-import { ErrorMessage } from './styles'
+import { ErrorMessage, Img } from './styles'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  isOpenModal: PropTypes.bool,
+  detail: PropTypes.shape({
+    species: PropTypes.shape({
+      name: PropTypes.string
+    })
+  }),
+  caughtPoke: PropTypes.shape({
+    name: PropTypes.string,
+    sprites: PropTypes.shape({
+      front_default: PropTypes.string
+    })
+  }),
+  setIsOpenModal: PropTypes.func,
+  setCaughtPoke: PropTypes.func,
+  isError: PropTypes.string,
+  handleAddToMyPokeList: PropTypes.func
+}
+
+const defaultProps = {
+  isOpenModal: false,
+  detail:{
+    species:{
+      name: ''
+    }
+  },
+  caughtPoke:{
+    name: '',
+    sprites:{
+      front_default: ''
+    }
+  },
+  setIsOpenModal: () => {},
+  setCaughtPoke: () => {},
+  isError: '',
+  handleAddToMyPokeList: () => {}
+}
 
 const PokemonDetailFormModal = ({
   isOpenModal,
@@ -34,9 +73,9 @@ const PokemonDetailFormModal = ({
       Let's set a nickname for new Pokemon
     </Text>
     <div>
-      <img 
+      <Img 
         src={ caughtPoke.sprites?.front_default }
-        alt={caughtPoke.name}
+        alt='caught pokemon'
       />
     </div>
     <div>
@@ -57,6 +96,7 @@ const PokemonDetailFormModal = ({
       {isError}
     </ErrorMessage>
     <Button
+      arial-label='add to pokedex'
       onClick={ handleAddToMyPokeList }
       color='rgb(3,172,14)'
       margin='1rem 0 0'
@@ -72,5 +112,8 @@ const PokemonDetailFormModal = ({
   </Modal>
 
 )
+
+PokemonDetailFormModal.propTypes = propTypes
+PokemonDetailFormModal.defaultProps = defaultProps
 
 export default PokemonDetailFormModal

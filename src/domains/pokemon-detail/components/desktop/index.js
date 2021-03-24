@@ -1,11 +1,5 @@
 import React from 'react'
 import { 
-  DesktopWrapper, 
-  ImageWrapper, 
-  InformationWrapper, 
-  PokemonDetailCard 
-} from './styles'
-import { 
   Badge, 
   Button, 
   Text,
@@ -17,8 +11,15 @@ import {
   PokemonDetailTypeBadge,
   PokemonDetailPreviewImage  
 } from 'domains/pokemon-detail/components'
-import { Flex } from '../../styles'
+import { 
+  DesktopWrapper, 
+  Flex,
+  ImageWrapper, 
+  InformationWrapper, 
+  PokemonDetailCard
+} from './styles'
 import PropTypes from 'proptypes'
+import { secondary } from 'components/color-mapping'
 
 const propTypes = {
   detail: PropTypes.shape({
@@ -71,8 +72,9 @@ const PokemonDetailDesktop = ({
               />
 
               <Button
+                aria-label='catch me'
                 width='100%'
-                color='orange'
+                color={ secondary }
                 margin='1rem 0'
                 onClick={ handleClickPokeBall }
                 disabled={ isCatching }
@@ -80,6 +82,7 @@ const PokemonDetailDesktop = ({
                 <Text
                   margin='0.25rem 0'
                   bold
+                  fontSize='1.5rem'
                 >
                   CATCH ME
                 </Text>
@@ -124,7 +127,7 @@ const PokemonDetailDesktop = ({
               >
                 WEIGHT / HEIGHT:
               </Text>
-              <Flex justifyContent=''>
+              <Flex>
                 <Text>
                   <Badge color='rgba(246, 39, 127, 0.7)'>
                     { detail.weight/10 } kg / { detail.height/10 } m

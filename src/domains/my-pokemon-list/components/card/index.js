@@ -1,14 +1,41 @@
 import React from 'react'
+import dayjs from 'dayjs'
 import { 
   Button,
   Card,
   Text 
 } from 'components'
-import { Img } from './styles'
-import dayjs from 'dayjs'
-import { PokemonDetailStats } from 'domains/pokemon-detail/components'
-import POKEMON_TYPE_BADGE_COLOR_MAPPING from 'domains/pokemon-detail/components/type-badge/constant'
 import { secondary } from 'components/color-mapping'
+import { PokemonDetailStats } from 'domains/pokemon-detail/components'
+import { Img } from './styles'
+import POKEMON_TYPE_BADGE_COLOR_MAPPING from 'domains/pokemon-detail/components/type-badge/constant'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  poke: PropTypes.shape({
+    name        : PropTypes.string,
+    speciesName : PropTypes.string,
+    mainTypes   : PropTypes.string,
+    image       : PropTypes.string,
+    date        : PropTypes.string,
+    stats       : PropTypes.array
+  }),
+  setSelectedPoke       : PropTypes.func,
+  setIsOpenConfirmation : PropTypes.func
+}
+
+const defaultProps ={
+  poke: {
+    name        : '',
+    speciesName : '',
+    mainTypes   : '',
+    image       : '',
+    date        : '',
+    stats       : []
+  },
+  setSelectedPoke       : () => {},
+  setIsOpenConfirmation : () => {}
+}
 
 const MyPokemonListCard = ({ 
   poke,
@@ -67,7 +94,7 @@ const MyPokemonListCard = ({
           margin='0.75rem 0 0'
           marginMobile='0.75rem 0 0'
         >
-        Caught at:
+          Caught at:
         </Text>
         <Text 
           margin='0.5rem 0 0'
@@ -81,7 +108,7 @@ const MyPokemonListCard = ({
           margin='0.75rem 0 0'
           marginMobile='0.75rem 0 0'
         >
-        Stats:
+          Stats:
         </Text>
         {
           poke.stats.map((stat) => (
@@ -93,6 +120,7 @@ const MyPokemonListCard = ({
           ))
         }
         <Button 
+          aria-label='release'
           onClick={ () => {
             setIsOpenConfirmation(true)
             setSelectedPoke(poke)
@@ -102,12 +130,15 @@ const MyPokemonListCard = ({
           margin='1rem 0 0 0'
         >
           <Text bold>
-          RELEASE
+            RELEASE
           </Text>
         </Button>
       </Card>
     </>
   )
 }
+
+MyPokemonListCard.propTypes = propTypes
+MyPokemonListCard.defaultProps = defaultProps
 
 export default MyPokemonListCard

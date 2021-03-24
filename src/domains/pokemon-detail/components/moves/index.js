@@ -1,14 +1,30 @@
 import React from 'react'
-import { Badge, Text } from 'components'
-import { Grid } from './styles'
 import { 
-  DesktopWrapper, 
-  MobileWrapper 
-} from '../../styles'
+  Badge, 
+  Text 
+} from 'components'
+import { 
+  Grid,
+  DesktopWrapper,
+  MobileWrapper
+} from './styles'
 import { blue } from 'components/color-mapping'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  detail: PropTypes.shape({
+    moves: PropTypes.array
+  })
+}
+
+const defaultProps = {
+  detail: {
+    moves: []
+  }
+}
 
 const PokemonDetailMoves = ({ detail }) => (
-  <div style={{ marginBottom: '0rem' }}>
+  <>
     <Text 
       bold 
       margin='1rem 0 0.5rem'
@@ -40,7 +56,10 @@ const PokemonDetailMoves = ({ detail }) => (
         ))
       }
     </Grid>
-  </div>
+  </>
 )
+
+PokemonDetailMoves.propTypes = propTypes
+PokemonDetailMoves.defaultProps = defaultProps
 
 export default PokemonDetailMoves

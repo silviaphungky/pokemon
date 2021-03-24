@@ -6,6 +6,27 @@ import {
   AchieveBar, 
   UnachieveBar 
 } from './styles'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  name : PropTypes.string,
+  stat : PropTypes.shape({
+    stat: PropTypes.shape({
+      name: PropTypes.string
+    }),
+    base_stat: PropTypes.number
+  })
+}
+
+const defaultProps = {
+  name : '',
+  stat : {
+    stat: {
+      name: ''
+    },
+    base_stat: 0
+  }
+}
 
 const PokemonDetailStats = ({ 
   name,
@@ -26,4 +47,8 @@ const PokemonDetailStats = ({
     </StatsWrapper>
   )
 }
+
+PokemonDetailStats.propTypes = propTypes
+PokemonDetailStats.defaultProps = defaultProps
+
 export default PokemonDetailStats
