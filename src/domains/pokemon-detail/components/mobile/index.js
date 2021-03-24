@@ -1,21 +1,19 @@
 import React from 'react'
 import { 
-  PokemonDetailMoves, 
-  PokemonDetailPreviewImage, 
-  PokemonDetailTypeBadge 
-} from 'domains/pokemon-detail/components'
-import { 
   Badge, 
   Text,
   Layout 
 } from 'components'
 import { 
-  PokemonDetailCard
-} from './styles'
+  PokemonDetailMoves, 
+  PokemonDetailPreviewImage, 
+  PokemonDetailTypeBadge 
+} from 'domains/pokemon-detail/components'
 import { 
-  Flex, 
-  MobileWrapper 
-} from '../../styles'
+  MobileWrapper,
+  PokemonDetailCard,
+  Flex
+} from './styles'
 import PropTypes from 'proptypes'
 
 const propTypes = {
