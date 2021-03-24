@@ -64,7 +64,7 @@ const PokemonDetailMobile = ({
           </div>
 
           { /*weight height*/ }
-          <Flex>
+          <Flex justifyContent='flex-end'>
             <Text>
               <Badge color='rgba(246, 39, 127, 0.5)'>
                 { detail.weight/10 } kg / { detail.height/10 } m
