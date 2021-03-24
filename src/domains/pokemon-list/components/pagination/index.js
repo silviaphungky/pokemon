@@ -5,6 +5,7 @@ import {
 } from 'components'
 import { Flex } from './styles'
 import PropTypes from 'proptypes'
+import { secondary } from 'components/color-mapping'
 
 const propTypes = {
   loading   : PropTypes.bool,
@@ -32,23 +33,25 @@ const PokemonListPagination = ({
   <>
     <Flex>
       <Button
+        aria-label='previous'
         margin='0 0.5rem'
         onClick={ () => {
           const prev = offset - limit
           setOffset(prev)
         } }
         disabled={ offset === 1 || loading }
-        color='orange'
+        color={ secondary }
       >
         <i className="fas fa-angle-left" />
       </Button>
       <Button 
+        aria-label='next'
         margin='0 0.5rem'
         onClick={ () => {
           const next = offset + limit
           setOffset(next)
         } }
-        color='orange'
+        color={ secondary }
         disabled={ pokemons.count - offset  < 10 || loading }
       >
         <i className="fas fa-angle-right"></i>
