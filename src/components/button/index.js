@@ -3,13 +3,11 @@ import { Wrapper } from './styles'
 import PropTypes from 'proptypes'
 
 const propTypes = {
-  children : PropTypes.element,
-  onClick  : PropTypes.func
+  children: PropTypes.element
 }
 
 const defaultProps = {
-  children : <></>,
-  onClick  : () => {}
+  children: <></>
 }
 
 const Button = ({ 
@@ -19,7 +17,7 @@ const Button = ({
   <Wrapper 
     type='button' 
     { ...props }
-    title='button'
+    data-testid='button'
   >
     { children }
   </Wrapper>

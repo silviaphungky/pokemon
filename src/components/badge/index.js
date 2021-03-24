@@ -5,7 +5,10 @@ const Badge = ({
   children,
   ...props
 }) => (
-  <Wrapper { ...props }>
+  <Wrapper 
+    { ...props }
+    data-testid='badge'
+  >
     { children }
   </Wrapper>
 )
