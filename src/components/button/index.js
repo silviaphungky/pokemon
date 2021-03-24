@@ -3,7 +3,7 @@ import { Wrapper } from './styles'
 import PropTypes from 'proptypes'
 
 const propTypes = {
-  children: PropTypes.element
+  children: PropTypes.node
 }
 
 const defaultProps = {

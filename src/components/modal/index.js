@@ -5,6 +5,19 @@ import {
   Modale,
   CloseButton 
 } from './styles'
+import PropTypes from 'proptypes'
+
+const propTypes = {
+  children  : PropTypes.node,
+  isOpen    : PropTypes.bool,
+  setIsOpen : PropTypes.func
+}
+
+const defaultProps = {
+  children  : <></>,
+  isOpen    : false,
+  setIsOpen : () => {}
+}
 
 const Modal = ({
   children,
@@ -31,5 +44,8 @@ const Modal = ({
     </Modale>
   </>
 )
+
+Modal.propTypes = propTypes
+Modal.defaultProps = defaultProps
 
 export default Modal
