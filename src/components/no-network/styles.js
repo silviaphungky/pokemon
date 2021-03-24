@@ -7,4 +7,5 @@ export const NoNetworkCard = styled(Card)`
   border: none;
   margin-top: -2rem;
   padding-top: 4rem;
+  height: 93vh;
 `
