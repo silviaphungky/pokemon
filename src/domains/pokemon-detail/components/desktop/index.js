@@ -82,7 +82,7 @@ const PokemonDetailDesktop = ({
                 <Text
                   margin='0.25rem 0'
                   bold
-                  fontSize='1.5rem'
+                  fontSize='1.25rem'
                 >
                   CATCH ME
                 </Text>
