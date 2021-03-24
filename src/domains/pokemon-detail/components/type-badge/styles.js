@@ -7,7 +7,7 @@ export const Badge = styled.div`
   text-align: center;
   font-weight: bold;
   margin: 0 0.25rem;
-  background: ${({ background }) => background}
+  background: ${({ background }) => background};
 
   ${IS_MOBILE_SCREEN} {
     font-size: 0.75rem;
