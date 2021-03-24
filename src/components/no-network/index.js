@@ -1,20 +1,12 @@
 import React from 'react'
 import { Text } from 'components'
 import { NoNetworkCard } from './styles'
-import { 
-  HeaderImg, 
-  HeaderImgWrapper 
-} from 'domains/pokemon-list/styles'
+import {  HeaderImgWrapper } from 'domains/pokemon-list/styles'
 import { secondary } from 'components/color-mapping'
 
 const NoNetwork = () => (
   <>
-    <HeaderImgWrapper style={{ background: secondary }}>
-      <HeaderImg 
-        src='/header.png'
-        alt='pokemon'
-      />
-    </HeaderImgWrapper>
+    <HeaderImgWrapper style={{ background: secondary }} />
     <NoNetworkCard>
       <i className="fas fa-wifi fa-5x"/>
       <Text 
