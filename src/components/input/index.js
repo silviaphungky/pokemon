@@ -1,13 +1,11 @@
 import React from 'react'
 import { Wrapper } from './styles'
 
-const Input = ({ 
-  children,
-  ...props 
-}) => (
-  <Wrapper { ...props }>
-    { children }
-  </Wrapper>
+const Input = ({ ...props }) => (
+  <Wrapper 
+    { ...props }
+    data-testid='input'
+  />
 )
 
 export default Input
